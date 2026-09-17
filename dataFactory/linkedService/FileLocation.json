@@ -6,8 +6,8 @@
 		"type": "FileServer",
 		"typeProperties": {
 			"host": "D:\\Data Engineering Course\\Projects\\CRM Sales",
-			"userId": "sagar",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmZGMwMTM4Ni04MDAzLTQxNWUtYTE5YS1lY2Q5ZTdhYWI4NWYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"userId": "Sagar",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlYzg4YmU4NC04NjYzLTQ4MmEtOWQ1Ni05NDA1MTg3ZDQ0ZWQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "onpremisesAzureIntgrationruntime",
