@@ -1,0 +1,15 @@
+{
+	"name": "sales-data-pipeline",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "7756aff2-afb2-4cb9-9b40-48b57cf19bfa",
+		"tenantId": "530bd92f-cf9f-41e1-9a00-f4a6581c0699"
+	}
+}
