@@ -50,12 +50,52 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/TriggerPipeline')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Hour",
+						"interval": 15,
+						"startTime": "2026-09-17T16:55:00",
+						"timeZone": "India Standard Time"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/onpremisesAzureIntgrationruntime')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"type": "SelfHosted",
 				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/TriggerSalespipeline')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Hour",
+						"interval": 15,
+						"startTime": "2026-09-30T16:59:00",
+						"timeZone": "India Standard Time"
+					}
+				}
 			},
 			"dependsOn": []
 		},
@@ -347,7 +387,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/onPremToCloud')]",
+			"name": "[concat(parameters('factoryName'), '/onPremiseToCloud')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -704,7 +744,7 @@
 							"headers": {},
 							"url": "https://prod-28.centralindia.logic.azure.com:443/workflows/41d231f3edc5423cbc651c00c685011b/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=XJUZGRGMaESkluf3sxejcEm-eGDOwAtxW1DfIwwJFNo",
 							"body": {
-								"value": "{\n    \"pipelineName\" : \"@{pipeline().Pipeline}\"\",\n    \"status\" :\"Succeded\",\n    \"runId\": \"@{pipeline().RunId}\"\",\n    \"time\": \"@{utcNow()}\"\n\n}",
+								"value": "{\n    \"pipelineName\" : \"@{pipeline().Pipeline}\",\n    \"status\" :\"Succeded\",\n    \"runId\": \"@{pipeline().RunId}\",\n    \"time\": \"@{utcNow()}\"\n\n}",
 								"type": "Expression"
 							}
 						}
@@ -733,7 +773,7 @@
 							"headers": {},
 							"url": "https://prod-28.centralindia.logic.azure.com:443/workflows/41d231f3edc5423cbc651c00c685011b/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=XJUZGRGMaESkluf3sxejcEm-eGDOwAtxW1DfIwwJFNo",
 							"body": {
-								"value": "{\n    \"pipelineName\" : \"@{pipeline().Pipeline}\"\",\n    \"status\" :\"Failed\",\n    \"runId\": \"@{pipeline().RunId}\"\",\n    \"time\": \"@{utcNow()}\"\n\n}",
+								"value": "{\n    \"pipelineName\" : \"@{pipeline().Pipeline}\",\n    \"status\" :\"Failed\",\n    \"runId\": \"@{pipeline().RunId}\",\n    \"time\": \"@{utcNow()}\"\n\n}",
 								"type": "Expression"
 							}
 						}
@@ -751,36 +791,6 @@
 				"[concat(variables('factoryId'), '/datasets/productdata')]",
 				"[concat(variables('factoryId'), '/datasets/salesData')]",
 				"[concat(variables('factoryId'), '/datasets/salesteamData')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/TriggerPipeline')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "onPremToCloud",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Hour",
-						"interval": 15,
-						"startTime": "2026-09-17T16:35:00",
-						"timeZone": "India Standard Time"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/onPremToCloud')]"
 			]
 		}
 	]
