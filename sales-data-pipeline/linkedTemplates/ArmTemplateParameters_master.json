@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "sales-data-pipeline"
+		},
+		"AzureDataLake_accountKey": {
+			"value": ""
+		},
+		"FileLocation_password": {
+			"value": ""
+		},
+		"AzureDataLake_properties_typeProperties_url": {
+			"value": "https://crmsalesdataset.dfs.core.windows.net/"
+		},
+		"FileLocation_properties_typeProperties_host": {
+			"value": "D:\\Data Engineering Course\\Projects\\CRM Sales"
+		},
+		"FileLocation_properties_typeProperties_userId": {
+			"value": "sagarkh459@gmail.com"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
