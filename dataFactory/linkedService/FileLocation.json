@@ -1,0 +1,17 @@
+{
+	"name": "FileLocation",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "D:\\Data Engineering Course\\Projects\\CRM Sales",
+			"userId": "sagarkh459@gmail.com",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1M2Y1MjAxNy1lNzZjLTRhZTYtYTljNS1kMzQ5NjRjMTYyMDgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "onpremisesAzureIntgrationruntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
